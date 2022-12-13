@@ -1,0 +1,13 @@
+
+{% extends 'base.html'%}
+{% block body %}
+<form style="padding:25px" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p><b>ADD DETAILS</b></p>
+    <input type="text" name="name" placeholder="enter song name"><br><br>
+    <input type="text" name="artist" placeholder="enter artist detail"><br><br>
+    <input type="number" name="year" placeholder="enter year"><br><br>
+    <input type="file" name="image"><br><br>
+    <input type="submit">
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for i in song_list %}
+
+        <div style="padding:25px" class="col-md-3">
+            <div class="card">
+  <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" width="200" height="250">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.artist}}</p>
+    <a href="{% url 'artist:details' i.id %}" class="btn btn-primary">View Details</a> <br>
+
+
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'artist:add'  %}" class="btn btn-primary">Add New Song  </a>
+</div>
+
+{% endblock %}
